@@ -69,6 +69,13 @@ class SleepTrackerFragment : Fragment() {
         val adapter = SleepNightAdapter()
         binding.sleepList.adapter = adapter
 
+        sleepTrackerViewModel.nights.observe(viewLifecycleOwner, Observer {
+            sleepTrackerViewModel.nights.observe(viewLifecycleOwner, Observer {
+                it?.let {
+                    adapter.data = it
+                }
+            })
+        })
 
         // To use the View Model with data binding, you have to explicitly
         // give the binding object a reference to it.
