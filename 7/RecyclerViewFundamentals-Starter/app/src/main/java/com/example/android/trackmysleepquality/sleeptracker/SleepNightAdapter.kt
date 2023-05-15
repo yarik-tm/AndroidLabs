@@ -3,9 +3,9 @@ package com.example.android.trackmysleepquality.sleeptracker
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.trackmysleepquality.database.SleepNight
-import androidx.recyclerview.widget.ListAdapter
 import com.example.android.trackmysleepquality.databinding.ListItemSleepNightBinding
 
 class SleepNightAdapter(val clickListener: SleepNightListener):
@@ -47,6 +47,7 @@ class SleepNightAdapter(val clickListener: SleepNightListener):
 //                    else -> R.drawable.ic_sleep_active
 //                }
 //            )
+            binding.sleep = item
             binding.clickListener = clickListener
             binding.executePendingBindings()
         }
